@@ -1,1 +1,9 @@
-also-aslo: hello
+swagger:
+  api:
+    contact:
+      name: Benjamin Kostiuk
+      url: TODO-ADD-PUFF-URL
+      email: benkostiuk1@gmail.com
+    license:
+      name: MIT License
+      url: https://opensource.org/licenses/MIT

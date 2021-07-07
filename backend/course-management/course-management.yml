@@ -1,1 +1,23 @@
-test1: Coming from course-management.yml
+swagger:
+  auth:
+    token-url: http://localhost:8180/auth/realms/puff/protocol/openid-connect/token
+    client-id: user-auth
+    client-secret: f80e13fa-5e3f-4078-939f-4e2d084c38da   # Replace with client id for user-auth
+  api:
+    title: Course Management REST Api
+    description: Course Management REST Api documentation and management
+    contact:
+      name: Benjamin Kostiuk
+      url: TODO-ADD-PUFF-URL
+      email: benkostiuk1@gmail.com
+    license:
+      name: MIT License
+      url: https://opensource.org/licenses/MIT
+    version: 0.0.1  # TODO Update version
+
+keycloak:
+  realm: puff
+  ssl-required: external
+  resource: course-management
+  principal-attribute: preferred_username
+  bearer-only: true

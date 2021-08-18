@@ -1,0 +1,9 @@
+swagger:
+  api:
+    contact:
+      name: TODO-ADD-CONTACT-NAME
+      url: TODO-ADD-PUFF-URL
+      email: TODO-ADD-PUFF-CONTACT-EMAIL
+    license:
+      name: MIT License
+      url: https://opensource.org/licenses/MIT

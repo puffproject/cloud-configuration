@@ -1,29 +1,10 @@
-server:
-  port: 8080
 
-spring:
-  data.web.pageable:
-    default-page-size: 40
-    max-page-size: 200
-  h2:
-    console:
-      enabled: false
-  datasource:
-    url: TODO-ADD-JDBC-URL
-    driverClassName: TODO-ADD-DRIVER-CLASS
-    initialization-mode: always # TODO double check this
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    hibernate:
-      ddl-auto: validate
-    show-sql: true
+# management:
+#   server:
+#     port: 8080
+#     address: 127.0.0.1
+#   endpoints:
+#     web.exposure.include: health,info,refresh
 
-management:
-  server:
-    port: 8080
-    address: 127.0.0.1
-  endpoints:
-    web.exposure.include: health,info,refresh
-
-keycloak:
-  auth-server-url: TODO-ADD-AUTH-SERVER-URL
+# keycloak:
+#   auth-server-url: TODO-ADD-AUTH-SERVER-URL

@@ -10,7 +10,7 @@ spring:
     console:
       enabled: false
   datasource:
-    url: jdbc:mysql://puffsqlserver.mysql.database.azure.com:3306/puff_dev
+    url: ${MYSQLCONNSTR_JDBC_DB_URL}
     username: ${SQL_DB_USERNAME}
     password: ${SQL_DB_PASSWORD}
     driverClassName: com.mysql.jdbc.Driver

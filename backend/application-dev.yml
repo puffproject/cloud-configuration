@@ -1,4 +1,7 @@
 spring:
+  servlet.multipart:
+    max-file-size: 500KB
+    max-request-size: 1MB
   data.web.pageable:
     default-page-size: 20
     max-page-size: 100
@@ -7,7 +10,7 @@ spring:
     console:
       enabled: false
   datasource:
-    url: ${MYSQL_JDBC_CONNECTION_STRING}
+    url: jdbc:mysql://puffsqlserver.mysql.database.azure.com:3306/puff_dev
     username: ${SQL_DB_USERNAME}
     password: ${SQL_DB_PASSWORD}
     driverClassName: com.mysql.jdbc.Driver
@@ -18,3 +21,17 @@ spring:
       naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
       ddl-auto: validate
     show-sql: true
+
+swagger:
+  # TODO REPLACE WITH IMPLICIT FLOW
+  auth:
+    token-url: https://puff-keycloak-auth.azurewebsites.net/auth/realms/puff/protocol/openid-connect/token
+    client-id: user-auth
+    client-secret: ${USER_AUTH_SERVICE_CLIENT_SECRET}
+
+keycloak:
+  realm: puff
+  auth-server-url: https://puff-keycloak-auth.azurewebsites.net/auth
+  ssl-required: external
+  principal-attribute: preferred_username
+  bearer-only: true

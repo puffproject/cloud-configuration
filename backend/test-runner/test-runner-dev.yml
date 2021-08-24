@@ -1,1 +1,30 @@
-testing: 2
+management:
+  endpoints:
+    web.exposure.include: health,info,refresh
+
+service-account:
+  client-id: puff-service-acc
+  client-secret: ${SERVICE_ACCOUNT_CLIENT_SECRET}
+
+runner:
+  timeouts:
+    entry-script: 5
+    docker-container: 7
+  container.memory: 400
+  dir: WORKING_DIR   # TODO UPDATE THIS
+  env: /runner/environments/reg.env
+
+docker:
+  build:
+    dir: /code
+    timeout: 10
+    python3:
+      entry: /runner/docker/python3/python_entry.sh
+      dockerfile: /runner/docker/python3/Dockerfile
+    java:
+      entry: TODO
+      dockerfile: /runner/docker/java/Dockerfile
+    haskell:
+      entry: /runner/docker/haskell/haskell_entry.sh
+      dockerfile: /runner/docker/haskell/Dockerfile
+      suite-template: /runner/docker/haskell/suite_template
